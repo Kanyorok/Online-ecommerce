@@ -1,0 +1,32 @@
+[
+    {
+        "name" : "SanDisk Ultra 128GB SDXC UHS-I Memory Card up to 80MB/s",
+        "price" : "45.99",
+        "description" : "Ultra-fast cards to take better pictures and full HD videos with your compact to mid-range point-and-shoot...",
+        "ratings" : 4.5,
+        "image" : [{
+            "public_id" : "products/tzfsnrli3szrdnb4jgge",
+            "url" : "https://res.cloudinary.com/shopit/image/upload/v1606231282/products/tzfsnrli3szrdnb4jgge.jpg"
+        }],
+        "category" : "Electronics",
+        "seller" : "Ebay",
+        "stock" : 50,
+        "numOfReviews" : 32,
+        "reviews" : []
+    },
+    {
+        "name" : "SanDisk Ultra 8GB ",
+        "price" : "450.99",
+        "description" : "Ultra-fast cards to take better pictures and full HD videos with your compact to mid-range point-and-shoot...",
+        "ratings" : 4.5,
+        "image" : [{
+            "public_id" : "products/l2bd3hhy8ddslcxstuuz",
+            "url" : "https://res.cloudinary.com/shopit/image/upload/v1606231282/products/12bd3hhy8ddslcxstuuz.jpg"
+        }],
+        "categories" : "Electronics",
+        "seller" : "Jumia",
+        "stock" : 40,
+        "numOfReviews" : 32,
+        "reviews" : []
+    }
+]
