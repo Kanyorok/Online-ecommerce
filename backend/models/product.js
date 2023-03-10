@@ -38,10 +38,46 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please select category for this product'],
         enum: {
-            values: ['Electronics', 'Cameras', 'Laptops', 'Accessories', 'others'],
+            values: ['Electronics', 'Cameras', 'Laptops', 'Accessories', 'Headphones', 'Food', 'Clothes', 'Shoes',],
             message: 'Please select valid category'
         }
     },
+    seller: {
+        type: String,
+        required: [true, 'Please enter seller name'],
+        trim: true,
+        maxLength: [100, 'Seller cannot be longer than 100 characters']
+    },
+    stock: {
+        type: Number,
+        required: [true, 'Please enter product stock'],
+        maxLength: [5, 'Product stock cannot be longer than'],
+        default: 0
+    },
+    numOfReviews: {
+        type: Number,
+        default: 0
+    },
+    reviews: [
+        {
+            name: {
+                type: String,
+                required: true
+            },
+            rating: {
+                type: Number,
+                required: true
+            },
+            comment: {
+                type: String,
+                required: true
+            }
+        }
+    ],
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 })
 
 module.exports = mongoose.model('product', productSchema)
