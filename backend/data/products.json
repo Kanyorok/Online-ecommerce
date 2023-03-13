@@ -73,5 +73,20 @@
         "stock" : 20,
         "numOfReviews" : 28,
         "reviews" : []
+    },
+    {
+        "name" : "Delete Infinix note12",
+        "price" : "100.00",
+        "description" : "It is a China budget phone.",
+        "ratings" : 1.5,
+        "image" : [{
+            "public_id" : "products/laptop-uuz11",
+            "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678468857/laptop-under-500-2048px-acer-1_ujbpri.jpg"
+        }],
+        "category" : "Laptops",
+        "seller" : "Amazon",
+        "stock" : 20,
+        "numOfReviews" : 28,
+        "reviews" : []
     }
 ]
