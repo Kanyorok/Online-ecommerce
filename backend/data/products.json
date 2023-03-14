@@ -88,5 +88,20 @@
         "stock" : 20,
         "numOfReviews" : 28,
         "reviews" : []
+    },
+    {
+        "name" : "Apple Refurbished MacBook Pro 13 ",
+        "price" : "3642",
+        "description" : "With support for millions of colors, the brilliant LED backlit 33.782 cm display of this Macbook Pro is sure to keep your eyes locked on to it all along. The display features a resolution of 1280 x 800 pixels and is also developed with IPS technology. LED Backlit 280 x 800 pixels",
+        "ratings" : 4.5,
+        "image" : [{
+            "public_id" : "products/laptop-qx6azr",
+            "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678802629/mbp-silver-select-202206_qx6azr.jpg"
+        }],
+        "category" : "Laptops",
+        "seller" : "Amazon",
+        "stock" : 20,
+        "numOfReviews" : 28,
+        "reviews" : []
     }
 ]
