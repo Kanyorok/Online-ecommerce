@@ -1,4 +1,4 @@
-const mongoose = require('moongoose');
+const mongoose = require('mongoose');
 
 const orderSchema = mongoose.Schema({
     shippingInfo: {
@@ -24,9 +24,9 @@ const orderSchema = mongoose.Schema({
         }
     },
     user: {
-        type: mongoose.Shema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'user'
+        ref: 'User'
     },
     orderItems: [
         {
@@ -47,55 +47,55 @@ const orderSchema = mongoose.Schema({
                 required: true
             },
             product: {
-                type: mongoose.Shema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 required: true,
-                ref: 'product'
-            },
-            paymentInfo: {
-                id: {
-                    type: String,
-                },
-                status: {
-                    type: String
-                }
-            },
-            paidAt: {
-                type: Date
-            },
-            itemsPrice: {
-                type: Number,
-                required: true,
-                default: 0.0
-            },
-            taxPrice: {
-                type: Number,
-                required: true,
-                default: 0.0
-            },
-            shippingPrice: {
-                type: Number,
-                required: true,
-                default: 0.0
-            },
-            totalPrice: {
-                type: Number,
-                required: true,
-                default: 0.0
-            },
-            orderStatus: {
-                type: String,
-                required: true,
-                default: 'processing'
-            },
-            deliveredAt: {
-                type: Date
-            },
-            createdAt: {
-                type: Date,
-                default: Date.now
+                ref: 'Product' 
             }
         }
-    ]
+    ],
+    paymentInfo: {
+        id: {
+            type: String
+        },
+        status: {
+            type: String
+        }
+    },
+    paidAt: {
+        type: Date
+    },
+    itemsPrice: {
+        type: Number,
+        required: true,
+        default: 0.0
+    },
+    taxPrice: {
+        type: Number,
+        required: true,
+        default: 0.0
+    },
+    shippingPrice: {
+        type: Number,
+        required: true,
+        default: 0.0
+    },
+    totalPrice: {
+        type: Number,
+        required: true,
+        default: 0.0
+    },
+    orderStatus: {
+        type: String,
+        required: true,
+        default: 'Processing'
+    },
+    deliveredAt: {
+        type: Date
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    }
 })
 
-module.exports = mongoose.model('order', orderSchema)
+module.exports = mongoose.model('Order', orderSchema)
