@@ -27,22 +27,31 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 // Get all products => /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     
+    //return next(new ErrorHandler('My Checking of errors', 400))
 
     const resPerPage = 8;
     const productCount = await Product.countDocuments()
+    try{
+        const apiFeatures = new APIFeatures(Product.find(), req.query)
+                .search()
+                .filter()
+                .pagination(resPerPage);
 
-    const apiFeatures = new APIFeatures(Product.find(), req.query)
-            .search()
-            .filter()
-            .pagination(resPerPage);
 
-    const products = await apiFeatures.query;
-    
-    res.status(200).json({
-        success: true,
-        productCount,
-        products
-    })
+        const products = await apiFeatures.query;
+        
+            res.status(200).json({
+                success: true,
+                productCount,
+                products
+            })
+    } catch (err) {
+        res.status(400).json({
+            success: false,
+            message: 'The Products Have not Loaded',
+            error: err
+        })
+    }
 })
 
 //Get single product details = /api/v1/product/:id

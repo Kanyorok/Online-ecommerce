@@ -7,22 +7,19 @@ import Product from "./product/Product";
 import Loader from "./layout/Loader";
 
 
-
-
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-
-  const { loading, products, error, productCount } = useSelector(state => state.products);
-
+  const {loading, error, products, productCount} =  useSelector((state) => state.products)
+  
   useEffect(() => {
 
     if (error) {
-      alert.success=('Success')
       return alert.error(error)
     }
-
+      
     dispatch(getProducts());
+    
 
   }, [dispatch, alert, error]);
 

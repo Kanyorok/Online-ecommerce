@@ -8,12 +8,12 @@ import AlertTemplate from "react-alert-template-basic-with-icons";
 import { positions, transitions, Provider as AlertProvider } from "react-alert";
 
 
+
 const options = {
   setTimeout: 5000,
   position: positions.BOTTOM_CENTER,
   transition: transitions.SCALE,
 };
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
