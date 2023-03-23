@@ -4,7 +4,7 @@
         "price" : "45.99",
         "description" : "Ultra-fast cards to take better pictures and full HD videos with your compact to mid-range point-and-shoot...",
         "ratings" : 4.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/tzfsnrli3szrdnb4jgge",
             "url" : "https://res.cloudinary.com/shopit/image/upload/v1606231282/products/tzfsnrli3szrdnb4jgge.jpg"
         }],
@@ -19,7 +19,7 @@
         "price" : "450.99",
         "description" : "Ultra-fast cards to take better pictures and full HD videos with your compact to mid-range point-and-shoot...",
         "ratings" : 4.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/l2bd3hhy8ddslcxstuuz",
             "url" : "https://res.cloudinary.com/shopit/image/upload/v1606231282/products/12bd3hhy8ddslcxstuuz.jpg"
         }],
@@ -34,7 +34,7 @@
         "price" : "350.45",
         "description" : "The Mountain bike of all terrains. Slick and strong for everyone.",
         "ratings" : 5.0,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/bike-uuz1",
             "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678439825/samples/people/bicycle.jpg"
         }],
@@ -49,7 +49,7 @@
         "price" : "1000.00",
         "description" : "A fast performance quality laptop.",
         "ratings" : 3.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/laptop-uuz11",
             "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678468857/laptop-under-500-2048px-acer-1_ujbpri.jpg"
         }],
@@ -64,7 +64,7 @@
         "price" : "1060.00",
         "description" : "A fast performance quality laptop.",
         "ratings" : 3.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/laptop-uuz11",
             "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678468857/laptop-under-500-2048px-acer-1_ujbpri.jpg"
         }],
@@ -79,7 +79,7 @@
         "price" : "100.00",
         "description" : "It is a China budget phone.",
         "ratings" : 1.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/laptop-uuz11",
             "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678468857/laptop-under-500-2048px-acer-1_ujbpri.jpg"
         }],
@@ -94,7 +94,7 @@
         "price" : "3642",
         "description" : "With support for millions of colors, the brilliant LED backlit 33.782 cm display of this Macbook Pro is sure to keep your eyes locked on to it all along. The display features a resolution of 1280 x 800 pixels and is also developed with IPS technology. LED Backlit 280 x 800 pixels",
         "ratings" : 4.5,
-        "image" : [{
+        "images" : [{
             "public_id" : "products/laptop-qx6azr",
             "url" : "https://res.cloudinary.com/dsfuiu63q/image/upload/v1678802629/mbp-silver-select-202206_qx6azr.jpg"
         }],
