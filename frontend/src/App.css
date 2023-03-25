@@ -178,8 +178,8 @@ footer {
   margin-left: 0.3rem;
 }
 
-.redColor {
-  color: red;
+.orangeColor {
+  color: rgba(174, 0, 255, 0.692);
 }
 
 .greenColor {

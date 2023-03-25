@@ -7,10 +7,12 @@ import { productsReducer, productDetailsReducer } from './reducers/productReduce
 
 const reducers = combineReducers({
     products: productsReducer,
-    productDetails: productDetailsReducer
+    productDetail: productDetailsReducer
 })
 
+
 let initialState = {};
+
 
 const middle_ware = [thunk];
 const store = configureStore({reducer: reducers}, initialState, composeWithDevTools(applyMiddleware(...middle_ware)))

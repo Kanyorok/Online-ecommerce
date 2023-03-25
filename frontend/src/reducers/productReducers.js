@@ -8,60 +8,49 @@ import {
   CLEAR_ERRORS,
 } from "../constants/productConstants";
 
-export const productsReducer =
-  ((state = { products: [] },
-    action) => {
-    switch (action.type) {
-      case ALL_PRODUCTS_REQUEST:
-        return {
-          loading: true,
-          products: [],
-        };
-
-      case ALL_PRODUCTS_SUCCESS:
-        return {
-          loading: false,
-          products: action.payload.products,
-          productsCount: action.payload.productCount,
-        };
-      case ALL_PRODUCTS_FAIL:
-        return {
-          loading: false,
-          error: action.payload,
-        };
-      case CLEAR_ERRORS:
-        return {
-          ...state,
-          error: null
-        };
-      default:
-        return state;
-    }
-  });
-
-export const productDetailsReducer = (state = { product: {} }, action) => {
+export const productsReducer = (state = { products: [] }, action) => {
   switch (action.type) {
-    case PRODUCT_DETAILS_REQUEST:
+    case ALL_PRODUCTS_REQUEST:
       return {
-        ...state,
-        loading: true
+        loading: true,
+        products: [],
       };
-    case PRODUCT_DETAILS_SUCCESS:
+
+    case ALL_PRODUCTS_SUCCESS:
       return {
         loading: false,
-        product: action.payload
+        products: action.payload.products,
+        productsCount: action.payload.productCount,
       };
-    case PRODUCT_DETAILS_FAIL:
+    case ALL_PRODUCTS_FAIL:
       return {
         loading: false,
-        product: action.payload
+        error: action.payload,
       };
     case CLEAR_ERRORS:
       return {
         ...state,
-        error: null
+        error: null,
       };
     default:
-      return state
+      return state;
   }
-}
+};
+
+export const productDetailsReducer = (state = { product: {} }, action) => {
+  switch (action.type) {
+    case PRODUCT_DETAILS_REQUEST:
+      return { ...state, loading: true };
+
+    case PRODUCT_DETAILS_SUCCESS:
+      return { loading: false, product: action.payload };
+
+    case PRODUCT_DETAILS_FAIL:
+      return { ...state, error: null };
+    case CLEAR_ERRORS:
+        return { ...state, error: null, }; 
+
+    default:
+      return state;
+  }
+};
