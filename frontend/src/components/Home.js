@@ -17,13 +17,25 @@ const Home = () => {
 
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products, productsCount, resPerPage } = useSelector((state) => state.products)
+  const { loading, error, products, productsCount, resPerPage, filteredProductsCount } = useSelector((state) => state.products)
   const { keyword } = useParams();
 
   const Keyword = keyword
 
   const [currentPage, setCurrentPage] = useState(1);
   const [price, setPrice] = useState([100, 10000])
+  const [category, setCategory] = useState('')
+
+  const categories = [
+    'Electronics', 
+    'Cameras', 
+    'Laptops', 
+    'Accessories', 
+    'Headphones', 
+    'Food', 
+    'Clothes', 
+    'Shoes'
+  ]
 
   useEffect(() => {
 
@@ -31,13 +43,18 @@ const Home = () => {
       return alert.error(error)
     }
 
-    dispatch(getProducts(Keyword, currentPage, price));
+    dispatch(getProducts(Keyword, currentPage, price, category));
 
 
-  }, [dispatch, Keyword, alert, currentPage, error, price])
+  }, [dispatch, Keyword, category, alert, currentPage, error, price])
 
   function setCurrentPageNo(pageNumber) {
     setCurrentPage(pageNumber)
+  }
+
+  let count = productsCount;
+  if(Keyword){
+    count = filteredProductsCount
   }
 
   return (
@@ -71,14 +88,38 @@ const Home = () => {
                         value={price}
                         onChange={(price) => setPrice(price)}
                       />
+
+                      <hr className="mt-5"/>
+
+                      <div className="mt-5">
+                        <h4 className="mb-3"> Categories</h4>
+
+                        <ul className="pl-0">
+                            {categories.map(category => (
+                                <li
+                                  style={{cursor: 'pointer',
+                                listStyle: 'none'}}
+                                key={category}
+                                onClick = {() => setCategory(category)}
+                                >
+                                  {category}
+                                </li>
+
+                              ))}
+                        </ul>
+                      </div>
+
+
                     </div>
                   </div>
 
                   <div className="col-6 col-md-9">
                     <div className="row">
-                      {products.map((product) => (
-                        <Product key={product._id} product={product} col={4}/>
-                      ))}
+                      {
+                        products.map((product) => (
+                          <Product key={product._id} product={product} col={5}/>
+                        ))
+                      }
                     </div>
                   </div>
                 </Fragment>
@@ -89,7 +130,7 @@ const Home = () => {
               )}
             </div>
           </section>
-          {resPerPage <= productsCount && (
+          {resPerPage <= count && (
             <div className="d-flex justify-content-center mt-5">
               <Pagination
                 activePage={currentPage}
