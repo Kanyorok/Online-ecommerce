@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 
 
+
 const Header = () => {
   return (
     <Fragment>
@@ -20,9 +21,9 @@ const Header = () => {
         </div>
 
         <div className="col-12 col-md-3 mt-4 mt-md-0 text-center">
-          <button className="btn" id="login_btn">
+          <Link to="/login" className="btn ml-4" id="login_btn">
             Login
-          </button>
+          </Link>
 
           <span id="cart" className="ml-3">
             Cart
