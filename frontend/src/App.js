@@ -14,6 +14,7 @@ function App() {
         <div className="container container-fluid">
           <Routes>
             <Route path="/" Component={Home} exact />
+            <Route path="/Search/:keyword" Component={Home} />
             <Route path="/product/:id" Component={ProductDetails} exact />
           </Routes>
         </div>

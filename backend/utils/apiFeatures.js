@@ -6,13 +6,13 @@ class APIFeatures {
 
     search(){
         const keyword = this.queryStr.keyword ? {
-            name: {
+            name: { 
                 $regex: this.queryStr.keyword,
-                $options: 'i'
+                $options: 'i' //case insensitive option
             }
         }: {}
 
-        this.query = this.query.find({...keyword})
+        this.query = this.query.find({...keyword});
         return this;
     }
     filter(){

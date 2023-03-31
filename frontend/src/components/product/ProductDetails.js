@@ -14,6 +14,7 @@ const ProductDetails = () => {
   const {loading, error, product}= useSelector((state) => state.productDetail);
   // const { loading, error, product } = productDetails;
   const { id } = useParams();
+  console.log(id)
 
   useEffect(() => {
 

@@ -27,11 +27,12 @@ exports.newProduct = catchAsyncErrors(async (req, res, next) => {
 // Get all products => /api/v1/products?keyword=apple
 exports.getProducts = catchAsyncErrors(async (req, res, next) => {
     
-    //return next(new ErrorHandler('My Checking of errors', 400))
-
     const resPerPage = 4;
     const productCount = await Product.countDocuments();
-    const apiFeatures = new APIFeatures(Product.find(), req.query).search().filter().pagination(resPerPage);
+    const apiFeatures = new APIFeatures(Product.find(), req.query)
+                        .search()
+                        .filter()
+                        .pagination(resPerPage);
     
     try{
         const products = await apiFeatures.query;
