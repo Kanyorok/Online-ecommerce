@@ -29,7 +29,7 @@ const Home = () => {
   const Keyword = keyword;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [price, setPrice] = useState([100, 10000]);
+  const [price, setPrice] = useState([1, 100000]);
   const [category, setCategory] = useState("");
   const [rating, setRating] = useState(0);
 
@@ -78,12 +78,12 @@ const Home = () => {
                     <div className="px-5">
                       <Range
                         marks={{
-                          100: `Ksh. 100`,
-                          10000: `Ksh. 10,000`,
+                          1: `Ksh. 100`,
+                          100000: `Ksh. 100,000`,
                         }}
                         min={100}
                         max={10000}
-                        defaultValue={[100, 10000]}
+                        defaultValue={[1, 100000]}
                         tipFormatter={(value) => `Ksh.${value}`}
                         tipProps={{
                           placement: "top",
