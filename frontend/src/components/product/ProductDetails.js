@@ -27,7 +27,7 @@ const ProductDetails = () => {
         dispatch(clearErrors)
     }
 
-  }, [dispatch, alert, error, id]);
+  }, [dispatch, product, alert, error, id]);
   return (
     <Fragment>
       {loading ? (
