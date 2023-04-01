@@ -4,6 +4,7 @@ import Footer from "./components/layout/Footer";
 import Home from "./components/Home";
 import ProductDetails from "./components/product/ProductDetails";
 import Login from "./components/user/Login";
+import Register from "./components/user/Register";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Route path="/product/:id" Component={ProductDetails} exact />
 
             <Route path="/login" Component={Login}/>
+            <Route path="/register" Component={Register}/>
           </Routes>
         </div>
         <Footer />

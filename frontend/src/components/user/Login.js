@@ -78,7 +78,7 @@ const Login = () => {
                                     LOGIN
                                 </button>
 
-                                <Link to="#" className="float-right mt-3">New User?</Link>
+                                <Link to="/register" className="float-right mt-3">New User?</Link>
                             </form>
                         </div>
                     </div>
