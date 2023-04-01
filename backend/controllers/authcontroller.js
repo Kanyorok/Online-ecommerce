@@ -22,8 +22,8 @@ exports.registerUser = catchAsyncError(async (req, res, next) => {
         email,
         password,
         avatar: {
-            public_id: 'avatars/pngtree-businessman-user-avatar-character-vector-illustration-png-image_2242909_uth2wx',
-            url: 'https://res.cloudinary.com/dsfuiu63q/image/upload/v1678870007/avatars/pngtree-businessman-user-avatar-character-vector-illustration-png-image_2242909_uth2wx.jpg'
+            public_id: result.public_id,
+            url: result.secure_url
         }
     })
 
