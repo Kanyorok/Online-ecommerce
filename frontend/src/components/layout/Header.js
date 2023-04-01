@@ -6,7 +6,6 @@ import { useAlert } from 'react-alert'
 import { logout } from '../../actions/userActions';
 
 
-
 const Header = () => {
   const alert = useAlert();
   const dispatch = useDispatch();

@@ -7,6 +7,7 @@ import ProductDetails from "./components/product/ProductDetails";
 import Login from "./components/user/Login";
 import Register from "./components/user/Register";
 import { loadUser } from "./actions/userActions";
+import Profile from "./components/user/Profile";
 import store  from "./store";
 import "./App.css";
 
@@ -29,6 +30,7 @@ function App() {
 
             <Route path="/login" Component={Login}/>
             <Route path="/register" Component={Register}/>
+            <Route path="/me" Component={Profile}/>
           </Routes>
         </div>
         <Footer />
