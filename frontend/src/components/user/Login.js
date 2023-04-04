@@ -26,7 +26,9 @@ const Login = () => {
 
         if (error) {
             alert.error(error);
+            console.log(error)
             dispatch(clearErrors());
+
         }
 
     }, [dispatch, alert, isAuthenticated, error, navigate])

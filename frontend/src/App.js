@@ -12,6 +12,7 @@ import store  from "./store";
 import UpdatePassword from "./components/user/UpdatePassword";
 import ProtectedRoute from "./components/route/ProtectedRoute";
 import UpdateProfile from "./components/user/UpdateProfile";
+import ForgotPassword from "./components/user/ForgotPassword";
 import "./App.css";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
 
             <Route path="/login" Component={Login}/>
             <Route path="/register" Component={Register}/>
+            <Route path="/password/forgot" Component={ForgotPassword}/>
             <Route path="/password/update/" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>}/>
             <Route path="/me" element={<ProtectedRoute><Profile/></ProtectedRoute>} />
             <Route path="/me/update" element={<ProtectedRoute><UpdateProfile/></ProtectedRoute>} />
