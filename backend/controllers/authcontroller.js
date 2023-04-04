@@ -37,7 +37,7 @@ exports.loginUser = catchAsyncError(async(req, res, next) => {
 
     //checks if email and password is entered by user
     if (!email || !password){
-        return next(new ErrorHandler('Please enter email & password', 400))
+        return next(new ErrorHandler('Please enter email & password', 401))
     }
 
     // Finding user in database
@@ -158,7 +158,7 @@ exports.updatePassword = catchAsyncError(async(req, res, next) => {
     }
     
 
-    user.password = req.body.password;
+    user.password = req.body.newPassword;
     await user.save();
 
     sendToken(user, 200, res)
