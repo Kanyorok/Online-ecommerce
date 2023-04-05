@@ -29,7 +29,7 @@ const NewPassword = () => {
             navigate('/login')
         }
 
-    }, [dispatch, alert, error, success])
+    }, [dispatch, alert, error, navigate, success])
 
 
     const submitHandler = (e) => {
