@@ -31,10 +31,9 @@ function App() {
         <div className="container container-fluid">
           <Routes>
             <Route path="/" Component={Home} exact />
-            <Route path="/cart" Component={Cart} exact />
             <Route path="/Search/:keyword" Component={Home} />
             <Route path="/product/:id" Component={ProductDetails} exact />
-
+            <Route path="/cart" Component={Cart}/>
             <Route path="/login" Component={Login}/>
             <Route path="/register" Component={Register}/>
             <Route path="/password/forgot" Component={ForgotPassword}/>
