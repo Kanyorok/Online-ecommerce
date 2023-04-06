@@ -14,6 +14,7 @@ import ProtectedRoute from "./components/route/ProtectedRoute";
 import UpdateProfile from "./components/user/UpdateProfile";
 import ForgotPassword from "./components/user/ForgotPassword";
 import NewPassword from "./components/user/NewPassword";
+import Cart from "./components/Cart/Cart";
 import "./App.css";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <div className="container container-fluid">
           <Routes>
             <Route path="/" Component={Home} exact />
+            <Route path="/cart" Component={Cart} exact />
             <Route path="/Search/:keyword" Component={Home} />
             <Route path="/product/:id" Component={ProductDetails} exact />
 

@@ -17,10 +17,12 @@ const ProductDetails = () => {
   const {loading, error, product}= useSelector((state) => state.productDetail);
   const { id } = useParams();
 
+  const the_prod_id = id
+
   useEffect(() => {
 
-    if (product && id !== product._id) {
-      dispatch(getProductDetails(id));
+    if (product && the_prod_id !== product._id) {
+      dispatch(getProductDetails(the_prod_id));
     }
 
     if(error){
@@ -28,7 +30,7 @@ const ProductDetails = () => {
         dispatch(clearErrors)
     }
 
-  }, [dispatch, product, alert, error, id]);
+  }, [dispatch, product, alert, error, the_prod_id]);
 
   const increaseQty = () => {
     const count = document.querySelector('.count')
@@ -53,7 +55,7 @@ const ProductDetails = () => {
   }
 
   const addToCart = () => {
-    dispatch(addItemToCart(id, quantity))
+    dispatch(addItemToCart(the_prod_id, quantity))
     alert.success('item Added to Cart')
   }
 
