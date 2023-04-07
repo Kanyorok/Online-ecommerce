@@ -17,20 +17,13 @@ const reducers = combineReducers({
 })
 
 
-let initialState = {
 
-    cart: {
-        cartItems: localStorage.getItem('cartItems') 
-                ? JSON.parse(localStorage.getItem('cartItems')) 
-                : []
-
-    }
-    
-};
+let initialState = {};
 
 
 
 const middle_ware = [thunk];
 const store = configureStore({reducer: reducers}, initialState, composeWithDevTools(applyMiddleware(...middle_ware)))
+
 
 export default store

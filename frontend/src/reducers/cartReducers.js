@@ -1,7 +1,15 @@
 import { ADD_TO_CART } from "../constants/cartConstants";
 
+function getInitialState(){
+    return{
+        cartItems: localStorage.getItem('cartItems') 
+                ? JSON.parse(localStorage.getItem('cartItems')) 
+                : []
+    }
+   }
 
-export const cartReducer = (state = { cartItems: [] }, action) => {
+export const cartReducer = (state = getInitialState(), action) => {
+    
   switch (action.type){
       case ADD_TO_CART:
           const item= action.payload;
