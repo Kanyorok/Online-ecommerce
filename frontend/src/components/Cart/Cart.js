@@ -1,18 +1,18 @@
 import React, { Fragment } from 'react'
 import { Link } from 'react-router-dom'
-import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
-import { getProductDetails, clearErrors } from '../../actions/productAction'
 import { addItemToCart, removeItemFromCart } from '../../actions/cartActions'
-
+import { useNavigate } from 'react-router-dom'
 
 const Cart = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const { cartItems } = useSelector(state => state.cart)
+    const { isAuthenticated } = useSelector(state => state.auth)
 
     const removeItemFromCartHandler = (id) => {
         dispatch(removeItemFromCart(id))
@@ -37,9 +37,17 @@ const Cart = () => {
         dispatch(addItemToCart(id, newQty))
 
     }
+    const checkoutHandler = ()=> {
+        if(!isAuthenticated){
+            navigate('/login?redirect=/shipping')
+        }else{
+            navigate('/shipping')
+        }
+    }
 
     return (
         <Fragment>
+             <MetaData title={`The Cart and Checkout`} />
             {cartItems.length === 0 ? <h2 className='mt-5'>Your Cart is Empty</h2> :
                 <Fragment>
                     <h2 className="mt-5">Your Cart: <b>{cartItems.length} items</b></h2>
@@ -95,7 +103,7 @@ const Cart = () => {
                                 <p>Est. total: <span className="order-summary-values"> Ksh. {cartItems.reduce((acc, item) => acc + (item.quantity *item.price), 0).toFixed(2)}</span></p>
 
                                 <hr />
-                                <button id="checkout_btn" className="btn btn-primary btn-block">Check out</button>
+                                <button id="checkout_btn" className="btn btn-primary btn-block" onClick={checkoutHandler}>Check out</button>
                             </div>
                         </div>
                     </div>
