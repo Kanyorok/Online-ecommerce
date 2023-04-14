@@ -44,7 +44,7 @@ const UpdateProfile = () => {
             dispatch(loadUser());
         }
 
-    }, [dispatch, alert, error, navigate, isUpdated])
+    }, [dispatch, alert, error, navigate, isUpdated, user])
     
 
     const submitHandler = (e) => {
