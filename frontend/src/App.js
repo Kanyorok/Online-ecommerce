@@ -40,11 +40,13 @@ function App() {
             <Route path="/register" Component={Register}/>
             <Route path="/password/forgot" Component={ForgotPassword}/>
             <Route path="/password/reset/:token" Component={NewPassword}/>
-            <Route path="/password/update/" element={<ProtectedRoute><UpdatePassword/></ProtectedRoute>}/>
-            <Route path="/me" element={<ProtectedRoute><Profile/></ProtectedRoute>} />
-            <Route path="/me/update" element={<ProtectedRoute><UpdateProfile/></ProtectedRoute>} />
-            <Route path="/shipping" element={<ProtectedRoute><Shipping/></ProtectedRoute>} />
-            <Route path="/order/confirm" element={<ProtectedRoute><ConfirmOrder/></ProtectedRoute>} />
+            <Route element={<ProtectedRoute/>}>
+              <Route path="/password/update/" element={<UpdatePassword/>}/>
+              <Route path="/me" element={<Profile/>} />
+              <Route path="/me/update" element={<UpdateProfile/>} />
+              <Route path="/shipping" element={<Shipping/>} /> 
+              <Route path="/order/confirm" element={<ConfirmOrder/>} />
+            </Route>           
           </Routes>
         </div>
         <Footer />
